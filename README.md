@@ -2,7 +2,7 @@
 
 This project will contain a thumbnailer compatible with GNOME and KDE based DEs, to extract icons from AppImages (i.e. `.DirIcon`).
 
-For now a proof of concept is provided in a bash script for GNOME only, using ImageMagik for resizing and the runtime from `AppImageKit`.
+For now a proof of concept is provided in a bash script for GNOME only, using ImageMagick for resizing and the runtime from `AppImageKit`.
 
 ## Roadmap
 
