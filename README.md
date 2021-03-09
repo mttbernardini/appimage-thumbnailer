@@ -6,9 +6,9 @@ For now a proof of concept is provided in a bash script for GNOME only, using Im
 
 ## Roadmap
 
-[ ] Write tool in C++ to make it usable by both GNOME and KDE
-[ ] Set up build system and dependencies
-[ ] Set up distro packaging under the name of `appimage-thumbnailer`
+- [ ] Write tool in C++ to make it usable by both GNOME and KDE
+- [ ] Set up build system and dependencies
+- [ ] Set up distro packaging under the name of `appimage-thumbnailer`
 
 ---
 © 2021 Matteo Bernardini
