@@ -9,7 +9,7 @@ install(
 # == kde thumbnailer ==
 install(
 	FILES appimage-thumbnailer.desktop
-	DESTINATION ${CMAKE_INSTALL_DATADIR}/kservices5/
+	DESTINATION ${SERVICES_INSTALL_DIR}/
 	COMPONENT appimage-thumbnailer-kde
 	EXCLUDE_FROM_ALL
 )
