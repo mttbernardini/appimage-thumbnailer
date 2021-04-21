@@ -32,7 +32,7 @@ int main(int argc, char* argv[])
 	}
 
 	// TODO: resize icon and write to png
-	char ch;
+	int ch;
 	while ((ch = fgetc(icon)) != EOF)
 	{
 		fputc(ch, out);
