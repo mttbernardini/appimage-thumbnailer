@@ -36,6 +36,8 @@ packages=(
 	# gnome-part deps
 
 	# kde-part deps
+	libkf5kio-dev
+	extra-cmake-modules
 )
 
 apt-get update
