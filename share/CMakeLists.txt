@@ -12,8 +12,8 @@ install(
 )
 
 install(
-	DIRECTORY
-	${CMAKE_CURRENT_SOURCE_DIR}/kservices5
-	DESTINATION ${CMAKE_INSTALL_DATADIR} COMPONENT appimagethumbnailer-kde
+	FILES
+	${CMAKE_CURRENT_SOURCE_DIR}/kservices5/appimage-thumbnailer.desktop
+	DESTINATION ${SERVICES_INSTALL_DIR} COMPONENT appimagethumbnailer-kde
 	EXCLUDE_FROM_ALL
 )
