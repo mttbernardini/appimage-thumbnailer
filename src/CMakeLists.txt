@@ -12,7 +12,7 @@ find_package(PkgConfig REQUIRED)
 add_compile_options(-Wall -Wpedantic)
 
 # icon extractor
-add_library(appimage-icon-extract STATIC "appimage-icon-extract.cpp")
+add_library(appimage-icon-extract STATIC "appimage-icon-extract.c")
 target_link_libraries(appimage-icon-extract PUBLIC libappimage)
 
 # gnome thumbnailer
