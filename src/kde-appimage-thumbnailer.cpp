@@ -3,7 +3,7 @@
  */
 
 #include <KIO/ThumbCreator>
-#include "appimage-icon-extract.cpp"
+#include "appimage-icon-extract.h"
 
 class AppImageThumbnailer : public ThumbCreator
 {
