@@ -1,6 +1,26 @@
-add_executable(gnome-appimage-thumbnailer "gnome-appimage-thumbnailer.c")
-#add_library(kde-appimage-thumbnailer MODULE "kde-appimage-thumbnailer.cpp")
-#target_link_libraries(kde-appimage-thumbnailer Qt5::Gui KF5::KIOWidgets KF5::KDcraw KF5::KExiv2)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(CMAKE_C_STANDARD 99)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+
+# Find includes in corresponding build directories
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+find_package(PkgConfig REQUIRED)
+
+add_compile_options(-Wall -Wpedantic)
+
+# icon extractor
+add_library(appimage-icon-extract STATIC "appimage-icon-extract.cpp")
+target_link_libraries(appimage-icon-extract PUBLIC libappimage)
+
+# gnome thumbnailer
+add_executable(gnome-appimage-thumbnailer "gnome-appimage-thumbnailer.c")
+target_link_libraries(gnome-appimage-thumbnailer PRIVATE appimage-icon-extract)
 install(TARGETS gnome-appimage-thumbnailer EXPORT appimage-thumbnailer RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+
+# kde thumbnailer
+#add_library(kde-appimage-thumbnailer MODULE "kde-appimage-thumbnailer.cpp")
+#target_link_libraries(kde-appimage-thumbnailer Qt5::Gui KF5::KIOWidgets KF5::KDcraw)
 #install(TARGETS kde-appimage-thumbnailer DESTINATION ${KDE_INSTALL_PLUGINDIR})

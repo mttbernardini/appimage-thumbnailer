@@ -3,7 +3,7 @@
  */
 
 #include <stdio.h>
-#include "appimage-icon-extract.cpp"
+#include "appimage-icon-extract.h"
 
 int main(int argc, char* argv[])
 {
@@ -19,7 +19,7 @@ int main(int argc, char* argv[])
 	//       there has to be a better way to do this without affecting image quality.
 	int size = 52;
 
-	FILE* icon = appimage_thumbnailer_icon_extract(appimage_path);
+	FILE* icon = appimage_thumbnailer_icon_extract(appimage_path, size);
 	if (!icon)
 	{
 		return 1;

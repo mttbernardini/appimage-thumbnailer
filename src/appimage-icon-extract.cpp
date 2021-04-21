@@ -4,11 +4,14 @@
 
 #include <stdio.h>
 #include <appimage/appimage++.h>
+#include <appimage/utils/ResourcesExtractor.h>
 
-using appimage::core;
-using appimage::utils;
+#include "appimage-icon-extract.h"
 
-FILE* appimage_thumbnailer_icon_extract(char* path_to_appimage, int preferred_size = 52)
+using namespace appimage::core;
+using namespace appimage::utils;
+
+FILE* appimage_thumbnailer_icon_extract(char* path_to_appimage, int preferred_size)
 {
 	/**
 	 * Extracts AppImage icon. If an icon of `preferred_size` is found it will be returned, otherwise fallback to `.DirIcon`.
