@@ -1,0 +1,20 @@
+name: Continuous builds
+on: push
+
+jobs:
+  build:
+    name: Build Thumbnailer
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
+
+      - name: Restore Docker Cache 🔧
+        uses: satackey/action-docker-layer-caching@v0.0.11
+        continue-on-error: true
+
+      - name: Build 🔧
+        run: ./ci/build.sh
