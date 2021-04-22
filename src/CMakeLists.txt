@@ -16,9 +16,19 @@ target_link_libraries(appimage-icon-extract PUBLIC libappimage)
 # gnome thumbnailer
 add_executable(gnome-appimage-thumbnailer "gnome-appimage-thumbnailer.c")
 target_link_libraries(gnome-appimage-thumbnailer PRIVATE appimage-icon-extract)
-install(TARGETS gnome-appimage-thumbnailer EXPORT appimage-thumbnailer DESTINATION ${CMAKE_INSTALL_BINDIR})
+install(TARGETS gnome-appimage-thumbnailer
+	DESTINATION ${CMAKE_INSTALL_BINDIR}
+	COMPONENT appimagethumbnailer-gnome
+	RENAME appimage-thumbnailer
+	EXCLUDE_FROM_ALL
+)
 
 # kde thumbnailer
 add_library(kde-appimage-thumbnailer MODULE "kde-appimage-thumbnailer.cpp")
 target_link_libraries(kde-appimage-thumbnailer Qt5::Core KF5::KIOWidgets)
-install(TARGETS kde-appimage-thumbnailer DESTINATION ${KDE_INSTALL_PLUGINDIR})
+install(TARGETS kde-appimage-thumbnailer
+	DESTINATION ${KDE_INSTALL_PLUGINDIR}
+	COMPONENT appimagethumbnailer-kde
+	RENAME appimage-thumbnailer
+	EXCLUDE_FROM_ALL
+)
