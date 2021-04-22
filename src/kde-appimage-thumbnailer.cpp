@@ -3,6 +3,8 @@
  */
 
 #include <KIO/ThumbCreator>
+#include <QtCore/QtGlobal>
+
 #include "appimage-icon-extract.h"
 
 class AppImageThumbnailer : public ThumbCreator

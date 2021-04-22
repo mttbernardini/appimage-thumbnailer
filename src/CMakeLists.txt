@@ -20,5 +20,5 @@ install(TARGETS gnome-appimage-thumbnailer EXPORT appimage-thumbnailer DESTINATI
 
 # kde thumbnailer
 add_library(kde-appimage-thumbnailer MODULE "kde-appimage-thumbnailer.cpp")
-target_link_libraries(kde-appimage-thumbnailer Qt5::Core KF5::KIOCore)
+target_link_libraries(kde-appimage-thumbnailer Qt5::Core KF5::KIOWidgets)
 install(TARGETS kde-appimage-thumbnailer DESTINATION ${KDE_INSTALL_PLUGINDIR})

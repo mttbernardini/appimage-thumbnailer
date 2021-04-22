@@ -5,6 +5,8 @@
 #pragma once
 
 #ifdef __cplusplus
+#include <cstdio>
+
 extern "C" {
 #endif
 
