@@ -1,19 +1,19 @@
 install(
 	DIRECTORY
 	${CMAKE_CURRENT_SOURCE_DIR}/mime
-	DESTINATION ${CMAKE_INSTALL_DATADIR} COMPONENT appimagethumbnailer
+	DESTINATION ${CMAKE_INSTALL_DATADIR} COMPONENT appimage-thumbnailer
 )
 
 install(
 	DIRECTORY
 	${CMAKE_CURRENT_SOURCE_DIR}/thumbnailers
-	DESTINATION ${CMAKE_INSTALL_DATADIR} COMPONENT appimagethumbnailer-gnome
+	DESTINATION ${CMAKE_INSTALL_DATADIR} COMPONENT appimage-thumbnailer-gnome
 	EXCLUDE_FROM_ALL
 )
 
 install(
 	FILES
 	${CMAKE_CURRENT_SOURCE_DIR}/kservices5/appimage-thumbnailer.desktop
-	DESTINATION ${SERVICES_INSTALL_DIR} COMPONENT appimagethumbnailer-kde
+	DESTINATION ${SERVICES_INSTALL_DIR} COMPONENT appimage-thumbnailer-kde
 	EXCLUDE_FROM_ALL
 )
