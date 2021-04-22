@@ -1,5 +1,5 @@
-# required for pkg-config module's imported target feature
-cmake_minimum_required(VERSION 3.6)
+set(LIBAPPIMAGE_DESKTOP_INTEGRATION_ENABLED OFF CACHE BOOL "")
+set(LIBAPPIMAGE_THUMBNAILER_ENABLED OFF CACHE BOOL "")
 
 if(NOT USE_SYSTEM_LIBAPPIMAGE)
 	add_subdirectory(libappimage EXCLUDE_FROM_ALL)
