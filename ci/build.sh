@@ -8,7 +8,7 @@ fi
 
 cd "$(dirname "$(realpath "$0")")"
 docker build -t appimage-thumbnailer -f Dockerfile .
-docker run -i --rm --user "$(id -u)" \
+docker run -it --rm --user "$(id -u)" \
 	-v "$(realpath ..):/ws" \
 	appimage-thumbnailer \
 	sh -exc "$BUILD_CMD"
