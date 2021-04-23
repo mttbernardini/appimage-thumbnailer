@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.6)
 project(appimage-thumbnailer)
 
-set(USE_SYSTEM_LIBAPPIMAGE OFF CACHE BOOL "") # set this macro if you want to use a system provided `libappimage`
+option(USE_SYSTEM_LIBAPPIMAGE "link againts system provided libappimage instead of bundled one")
 
 # == setup dependencies ==
 find_package(PkgConfig REQUIRED)
