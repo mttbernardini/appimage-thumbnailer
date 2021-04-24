@@ -1,13 +1,13 @@
+# compilation setup
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 
-# Find includes in corresponding build directories
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
-
 add_compile_options(-Wall -Wpedantic)
+add_link_options(-Wl,--as-needed)
 
 # icon extractor
 add_library(appimage-icon-extract STATIC "appimage-icon-extract.c")
