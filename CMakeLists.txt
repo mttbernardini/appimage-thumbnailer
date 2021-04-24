@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.6)
-project(appimage-thumbnailer)
+project(appimage-thumbnailer VERSION 0.1.1)
 
 option(USE_SYSTEM_LIBAPPIMAGE "link againts system provided libappimage instead of bundled one")
 
