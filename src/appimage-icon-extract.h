@@ -4,5 +4,11 @@
 
 #pragma once
 #include <stdio.h>
+#include <stdint.h>
 
-FILE* appimage_thumbnailer_icon_extract(char* path_to_appimage, int preferred_size);
+typedef struct {
+	uint8_t* data;
+	size_t   data_size;
+} icon_t;
+
+icon_t appimage_thumbnailer_icon_extract(char* path_to_appimage, int preferred_size);

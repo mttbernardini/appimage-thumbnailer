@@ -21,8 +21,8 @@ int main(int argc, char* argv[])
 	//     than default ones, which are sized 52.
 	int size = 52;
 
-	FILE* icon = appimage_thumbnailer_icon_extract(appimage_path, size);
-	if (!icon)
+	icon_t icon = appimage_thumbnailer_icon_extract(appimage_path, size);
+	if (!icon.data)
 	{
 		return 1;
 	}
@@ -34,11 +34,9 @@ int main(int argc, char* argv[])
 	}
 
 	// TODO: resize icon and write to png
-	int ch;
-	while ((ch = fgetc(icon)) != EOF)
-	{
-		fputc(ch, out);
-	}
+	fwrite(icon.data, 1, icon.data_size, out);
+
+	fclose(out);
 
 	return 0;
 }
