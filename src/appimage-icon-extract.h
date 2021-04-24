@@ -11,4 +11,4 @@ typedef struct {
 	size_t   data_size;
 } icon_t;
 
-icon_t appimage_thumbnailer_icon_extract(char* path_to_appimage, int preferred_size);
+icon_t appimage_thumbnailer_icon_extract(char const* path_to_appimage, int const preferred_size);
