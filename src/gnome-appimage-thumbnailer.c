@@ -2,7 +2,6 @@
  * Copyright (c) 2021 Matteo Bernardini
  */
 
-#include <stdio.h>
 #include "appimage-icon-extract.h"
 
 int main(int argc, char* argv[])

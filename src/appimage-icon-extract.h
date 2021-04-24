@@ -3,15 +3,6 @@
  */
 
 #pragma once
-
-#ifdef __cplusplus
-#include <cstdio>
-
-extern "C" {
-#endif
+#include <stdio.h>
 
 FILE* appimage_thumbnailer_icon_extract(char* path_to_appimage, int preferred_size);
-
-#ifdef __cplusplus
-} // end extern "C"
-#endif

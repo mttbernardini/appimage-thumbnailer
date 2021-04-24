@@ -5,7 +5,9 @@
 #include <KIO/ThumbCreator>
 #include <QtCore/QtGlobal>
 
+extern "C" {
 #include "appimage-icon-extract.h"
+}
 
 class AppImageThumbnailer : public ThumbCreator
 {
