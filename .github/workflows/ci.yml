@@ -17,4 +17,4 @@ jobs:
         continue-on-error: true
 
       - name: Build 🔧
-        run: ./ci/build.sh
+        run: make ci
