@@ -5,7 +5,7 @@
 #include <appimage/appimage.h>
 #include "appimage-icon-extract.h"
 
-icon_t appimage_thumbnailer_icon_extract(char* path_to_appimage, int preferred_size)
+icon_t appimage_thumbnailer_icon_extract(char const* path_to_appimage, int const preferred_size)
 {
 	/**
 	 * Extracts AppImage icon. If an icon of `preferred_size` is found it will be returned, otherwise fallback to `.DirIcon`.

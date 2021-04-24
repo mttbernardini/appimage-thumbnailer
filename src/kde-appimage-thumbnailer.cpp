@@ -4,9 +4,11 @@
 
 #include <KIO/ThumbCreator>
 #include <QtCore/QtGlobal>
+#include <QImage>
 
 extern "C" {
 #include "appimage-icon-extract.h"
+#include "unistd.h"
 }
 
 class AppImageThumbnailer : public ThumbCreator
@@ -17,8 +19,13 @@ public:
 
 	bool create(const QString& path, int width, int height, QImage& img) override
 	{
-		// TODO: implement
-		return false;
+		icon_t icon = appimage_thumbnailer_icon_extract(path.toStdString().c_str(), width);
+		if (!icon.data)
+		{
+			return false;
+		}
+
+		return img.loadFromData(icon.data, icon.data_size);
 	};
 
 	Flags flags() const override
