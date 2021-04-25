@@ -25,7 +25,7 @@ find_package(KF5 REQUIRED COMPONENTS KIO)
 # == setup sub-dirs ==
 add_subdirectory("lib")
 add_subdirectory("src")
-add_subdirectory("share")
+add_subdirectory("resources")
 
 # == packaging ==
 include("cmake/cpack_settings.cmake")

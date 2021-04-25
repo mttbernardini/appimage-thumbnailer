@@ -1,6 +1,6 @@
 # == gnome thumbnailer ==
 install(
-	FILES thumbnailers/appimage-thumbnailer.thumbnailer
+	FILES appimage-thumbnailer.thumbnailer
 	DESTINATION ${CMAKE_INSTALL_DATADIR}/thumbnailers/
 	COMPONENT appimage-thumbnailer-gnome
 	EXCLUDE_FROM_ALL
@@ -8,7 +8,7 @@ install(
 
 # == kde thumbnailer ==
 install(
-	FILES kservices5/appimage-thumbnailer.desktop
+	FILES appimage-thumbnailer.desktop
 	DESTINATION ${SERVICES_INSTALL_DIR}
 	COMPONENT appimage-thumbnailer-kde
 	EXCLUDE_FROM_ALL
