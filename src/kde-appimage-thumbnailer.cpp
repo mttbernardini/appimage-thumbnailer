@@ -18,13 +18,15 @@ public:
 
 	bool create(const QString& path, int width, int height, QImage& img) override
 	{
-		icon_t icon = appimage_thumbnailer_icon_extract(path.toStdString().c_str(), width);
-		if (!icon.data)
+		ait_icon_t* icon = appimage_thumbnailer_icon_extract(path.toStdString().c_str(), width);
+		if (!icon)
 		{
 			return false;
 		}
 
-		return img.loadFromData(icon.data, icon.data_size);
+		bool created = img.loadFromData(icon->data, icon->data_size);
+		appimage_thumbnailer_destroy_icon(icon);
+		return created;
 	};
 
 	Flags flags() const override

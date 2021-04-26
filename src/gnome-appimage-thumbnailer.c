@@ -19,10 +19,10 @@ int main(int argc, char* argv[])
 	//       there has to be a better way to do this without affecting image quality.
 	// NB: size < 128 has no frame, but we want to avoid having bigger icons
 	//     than default ones, which are sized 52.
-	int size = 52;
+	unsigned size = 52;
 
-	icon_t icon = appimage_thumbnailer_icon_extract(appimage_path, size);
-	if (!icon.data)
+	ait_icon_t* icon = appimage_thumbnailer_icon_extract(appimage_path, size);
+	if (!icon)
 	{
 		return 1;
 	}
@@ -34,8 +34,8 @@ int main(int argc, char* argv[])
 	}
 
 	// TODO: resize icon and write to png
-	fwrite(icon.data, 1, icon.data_size, out);
-
+	fwrite(icon->data, 1, icon->data_size, out);
+	appimage_thumbnailer_destroy_icon(icon);
 	fclose(out);
 
 	return 0;
