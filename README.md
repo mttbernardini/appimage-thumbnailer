@@ -4,6 +4,20 @@ This project will contain a thumbnailer compatible with GNOME and KDE based DEs,
 
 For now a proof of concept is provided in a bash script for GNOME only, using ImageMagick for resizing and the runtime from `AppImageKit`.
 
+## Building
+
+Clone this repository. Remember to clone submodules as well for dependencies:
+
+```sh
+git clone --recursive https://github.com/mttbernardini/appimage-thumbnailer
+```
+
+A `Makefile` is provided to run the build process in a isolated Docker container:
+
+```sh
+make help
+```
+
 ## Roadmap
 
 - [ ] Write tool in C++ to make it usable by both GNOME and KDE
