@@ -25,6 +25,7 @@ public:
 		}
 
 		bool created = img.loadFromData(icon->data, icon->data_size);
+		img = img.scaled(width, height, Qt::KeepAspectRatio);
 		appimage_thumbnailer_destroy_icon(icon);
 		return created;
 	};
