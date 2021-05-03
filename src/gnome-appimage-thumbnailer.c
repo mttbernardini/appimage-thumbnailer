@@ -15,7 +15,7 @@ static GdkPixbuf* rescale_icon(ait_icon_t* icon, unsigned target_size)
 	GdkPixbuf* rescaled_pixbuf = NULL;
 	GError* icon_error = NULL;
 
-	icon_stream = g_memory_input_stream_new_from_data(icon->data, icon->data_size, &appimage_thumbnailer_destroy_icon);
+	icon_stream = g_memory_input_stream_new_from_data(icon->data, icon->data_size, NULL);
 	if (!icon_stream)
 	{
 		fputs("AIT - cannot allocate GInputStream\n", stderr);
@@ -69,6 +69,7 @@ int main(int argc, char* argv[])
 	}
 
 	GdkPixbuf* rescaled_icon = rescale_icon(icon, size);
+	appimage_thumbnailer_destroy_icon(icon);
 	if (!rescaled_icon)
 	{
 		return 1;
