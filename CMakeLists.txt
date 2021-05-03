@@ -17,6 +17,7 @@ include(GNUInstallDirs)
 # kde dependencies
 find_package(ECM 1.0.0 REQUIRED NO_MODULE) # needed to be able to find KF5 below
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
+set(KDE_INSTALL_DIRS_NO_CMAKE_VARIABLES ON)
 include(KDEInstallDirs)
 find_package(Qt5 CONFIG REQUIRED COMPONENTS Core)
 find_package(KF5 REQUIRED COMPONENTS KIO)
