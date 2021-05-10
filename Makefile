@@ -2,7 +2,7 @@ DOCKER_IMAGE := appimage-thumbnailer
 DOCKER_RUN   := docker run -i --rm --user "$$(id -u)" -v "$$(realpath .):/ws"
 BUID_TYPE    := RelWithDebInfo
 
-.PHONY: help image deps ci package shell
+.PHONY: help image deps ci package shell clean
 
 help:
 	@echo "## available targets ##"
@@ -11,6 +11,7 @@ help:
 	@echo "ci             build project using cmake (in Docker container)"
 	@echo "package        generate packages using cpack (in Docker container)"
 	@echo "shell          run bash in Docker container for development inspection"
+	@echo "clean          clean build directory"
 	@echo
 	@echo "## settable variables#"
 	@echo "IGNORE_DOCKER  run targets in host machine rather than Docker container"
@@ -34,3 +35,6 @@ package: $(if $(IGNORE_DOCKER),,image)
 
 shell: image
 	$(DOCKER_RUN) -t $(DOCKER_IMAGE) bash
+
+clean:
+	rm -rf build/
