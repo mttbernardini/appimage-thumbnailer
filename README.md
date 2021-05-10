@@ -2,7 +2,7 @@
 
 This project contains a thumbnailer for AppImages, compatible with GNOME and KDE based DEs.
 
-For now the code is still in draft (e.g. `.DirIcon` is extracted without resizing) and has not been thoroughly tested yet.
+For now the code is still in draft and has not been thoroughly tested yet.
 
 ## Building
 
